@@ -1,6 +1,6 @@
 <template lang="pug">
   .chat
-    messages.mb-4(:messages="messages")
+    message-list.mb-4
 
     b-form(@submit="addMessage")
       b-input-group
@@ -12,13 +12,13 @@
 </template>
 
 <script>
-  import Messages from 'components/messages.vue'
+  import MessageList from 'components/MessageList.vue'
 
   export default {
     name: 'Chat',
 
     components: {
-      Messages
+      MessageList
     },
 
     data() {

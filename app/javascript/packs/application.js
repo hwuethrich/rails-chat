@@ -13,17 +13,36 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 // Vue Setup
 import Vue from 'vue/dist/vue.esm'
-
+import VueApollo from 'vue-apollo'
 import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm'
-Vue.use(BootstrapVue)
+import { ApolloClient } from 'apollo-client'
+import { HttpLink } from 'apollo-link-http'
+import { InMemoryCache } from 'apollo-cache-inmemory'
 
 import '../app.scss'
 import App from '../app.vue'
+
+const apolloClient = new ApolloClient({
+  link: new HttpLink({ uri: '/graphql' }),
+  cache: new InMemoryCache(),
+  connectToDevTools: true
+})
+
+const apolloProvider = new VueApollo({
+  defaultClient: apolloClient,
+  defaultOptions: {
+    $loadingKey: 'loading'
+  }
+})
+
+Vue.use(BootstrapVue)
+Vue.use(VueApollo)
 
 document.addEventListener('DOMContentLoaded', () => {
   new Vue({
     el: '#app',
     components: { App },
+    provide: apolloProvider.provide(),
     render: h => h(App)
   })
 })
