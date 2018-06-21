@@ -6,14 +6,6 @@
     "import/no-unassigned-import": 0,
     "semi": ["error", "never"],
     "no-console": "off",
-    "quotes": ["error", "single"],
-    "space-before-function-paren": [
-      "error",
-      {
-        "anonymous": "always",
-        "named": "always",
-        "asyncArrow": "always"
-      }
-    ]
+    "quotes": ["error", "single"]
   }
 }

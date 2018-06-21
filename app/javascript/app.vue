@@ -1,7 +1,7 @@
 <template lang="pug">
   #app
     b-container
-      h1 Hello sdfsdfffd
+      h1 Hello World
       chat
 </template>
 

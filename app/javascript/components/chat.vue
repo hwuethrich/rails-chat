@@ -4,7 +4,7 @@
 
     b-form(@submit="addMessage")
       b-input-group
-        b-input(v-model="message" required)
+        b-input(v-model="message" autocomplete="off" required)
 
         b-input-group-append
           b-btn(type="submit" variant="primary")
@@ -12,29 +12,29 @@
 </template>
 
 <script>
-import Messages from 'components/messages.vue'
+  import Messages from 'components/messages.vue'
 
-export default {
-  name: 'chat',
+  export default {
+    name: 'Chat',
 
-  components: {
-    Messages
-  },
+    components: {
+      Messages
+    },
 
-  data() {
-    return {
-      message: "",
-      messages: []
-    }
-  },
+    data() {
+      return {
+        message: '',
+        messages: []
+      }
+    },
 
-  methods: {
-    addMessage(evt) {
-      evt.preventDefault()
+    methods: {
+      addMessage(evt) {
+        evt.preventDefault()
 
-      this.messages.push({ text: this.message })
-      this.message = ""
+        this.messages.push({ text: this.message })
+        this.message = ''
+      }
     }
   }
-}
 </script>

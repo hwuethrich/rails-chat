@@ -11,9 +11,7 @@
   "prettier.eslintIntegration": false,
   "prettier.semi": false,
   "prettier.singleQuote": true,
-  "ruby.rubocop.executePath": "./bin/",
   "ruby.useBundler": false,
-  "ruby.format": false,
-  "ruby.rubocop.onSave": false,
+  "ruby.format": "rubocop",
   "vetur.format.scriptInitialIndent": true
 }
