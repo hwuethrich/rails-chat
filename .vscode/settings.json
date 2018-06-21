@@ -1,0 +1,19 @@
+{
+  "eslint.packageManager": "yarn",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "autoFix": true,
+      "language": "vue"
+    }
+  ],
+  "prettier.eslintIntegration": false,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "ruby.rubocop.executePath": "./bin/",
+  "ruby.useBundler": false,
+  "ruby.format": false,
+  "ruby.rubocop.onSave": false,
+  "vetur.format.scriptInitialIndent": true
+}

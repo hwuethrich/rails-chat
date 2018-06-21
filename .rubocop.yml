@@ -1,0 +1,55 @@
+# Ignore directories
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - '.pryrc'
+    - 'db/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'bin/**/*'
+    - 'log/**/*'
+    - 'node_modules/**/*'
+    - 'config/initializers/simple_form.rb'
+    - 'config/initializers/simple_form_bootstrap.rb'
+
+Rails:
+  Enabled: true
+
+Metrics/MethodLength:
+  Max: 50
+
+Metrics/ModuleLength:
+  Max: 200
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+
+Style/Documentation:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/FormatString:
+  Enabled: false
+
+Style/FormatStringToken:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Layout/EndAlignment:
+  AutoCorrect: true
+  EnforcedStyleAlignWith: variable
+
+Layout/CaseIndentation:
+  EnforcedStyle: end
+  IndentOneStep: true
