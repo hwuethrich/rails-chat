@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import { SEND_MESSAGE_MUTATION } from '../queries'
+  import { SEND_MESSAGE_MUTATION } from '../graphql/queries'
 
   export default {
     name: 'MessageInput',

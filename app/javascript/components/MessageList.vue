@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import { MESSAGES_QUERY, NEW_MESSAGE_SUBSCRIPTION } from '../queries'
+  import { MESSAGES_QUERY, NEW_MESSAGE_SUBSCRIPTION } from '../graphql/queries'
   import MessageItem from 'components/MessageItem.vue'
 
   export default {

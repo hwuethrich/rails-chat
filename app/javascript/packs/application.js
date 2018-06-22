@@ -8,62 +8,17 @@
 // layout file, like app/views/layouts/application.html.erb
 
 // Styles
-import 'bootstrap/scss/bootstrap'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 // Vue Setup
 import Vue from 'vue/dist/vue.esm'
-import VueApollo from 'vue-apollo'
-import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm'
-import { ApolloClient } from 'apollo-client'
-import { ApolloLink } from 'apollo-link'
-import { HttpLink } from 'apollo-link-http'
-import { InMemoryCache } from 'apollo-cache-inmemory'
+import App from '../layout/App.vue'
 
-import '../app.scss'
-import App from '../app.vue'
+// Test
+import '../styles/application.scss'
 
-import ActionCable from 'actioncable'
-import ActionCableLink from 'graphql-ruby-client/subscriptions/ActionCableLink'
-
-const cable = ActionCable.createConsumer()
-
-const httpLink = new HttpLink({
-  uri: '/graphql',
-  credentials: 'include'
-})
-
-const cableLink = new ActionCableLink({ cable })
-
-const hasSubscriptionOperation = ({ query: { definitions } }) => {
-  return definitions.some(
-    ({ kind, operation }) =>
-      kind === 'OperationDefinition' && operation === 'subscription'
-  )
-}
-
-const link = ApolloLink.split(
-  hasSubscriptionOperation,
-  new ActionCableLink({ cable }),
-  httpLink
-)
-
-const apolloClient = new ApolloClient({
-  // link: new HttpLink({ uri: '/graphql' }),
-  link: cableLink,
-  cache: new InMemoryCache(),
-  connectToDevTools: true
-})
-
-const apolloProvider = new VueApollo({
-  defaultClient: apolloClient,
-  defaultOptions: {
-    $loadingKey: 'loading'
-  }
-})
-
-Vue.use(BootstrapVue)
-Vue.use(VueApollo)
+import '../initializers/bootstrap'
+// import '../initializers/vuetify'
+import { apolloProvider } from '../initializers/apollo'
 
 document.addEventListener('DOMContentLoaded', () => {
   new Vue({
