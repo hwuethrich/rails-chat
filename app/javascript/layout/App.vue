@@ -8,7 +8,7 @@
 <script>
   // import Sidebar from '../layout/Sidebar'
   // import Toolbar from '../layout/Toolbar'
-  import Chat from 'components/Chat.vue'
+  import Chat from '../components/Chat.vue'
 
   export default {
     components: {

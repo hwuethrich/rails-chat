@@ -33,6 +33,7 @@ RUN npm install -g yarn && yarn install --production
 
 # Compile assets
 COPY . /app
+RUN find /app/app/javascript/
 RUN bundle exec rake assets:precompile
 
 
