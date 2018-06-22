@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # GraphQL
+gem 'redis'
 gem 'graphql'
 gem 'graphiql-rails'
 
