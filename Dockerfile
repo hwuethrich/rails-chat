@@ -33,7 +33,7 @@ RUN npm install -g yarn && yarn install --production
 
 # Compile assets
 COPY . /app
-RUN bundle exec rake webpacker:compile
+RUN bundle exec rake assets:precompile
 
 
 ##########################################################################
