@@ -7,3 +7,4 @@ log/*.log
 public/packs
 Dockerfile
 vendor/bundle
+.bundle/config
