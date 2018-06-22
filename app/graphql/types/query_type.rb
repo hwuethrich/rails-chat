@@ -2,8 +2,12 @@ class Types::QueryType < Types::BaseObject
   # Add root-level fields here.
   # They will be entry points for queries on your schema.
 
-  field :messages, [Types::Message], null: false, description: 'Returns a list of messages'
+  field :messages, [Types::MessageType],
+        null: false,
+        description: 'Returns a list of messages'
+
   def messages
-    ::Message.all.sample(5)
+    result = Message.order(created_at: :desc).limit(10)
+    result.to_a.reverse
   end
 end

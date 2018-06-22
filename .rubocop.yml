@@ -7,7 +7,6 @@ AllCops:
     - 'tmp/**/*'
     - 'vendor/**/*'
     - 'bin/*'
-
     - 'log/**/*'
     - 'node_modules/**/*'
     - 'config/initializers/simple_form.rb'

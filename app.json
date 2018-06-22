@@ -1,0 +1,8 @@
+{
+  "name": "rails-chat",
+  "scripts": {
+    "dokku": {
+      "postdeploy": "bundle exec rake db:migrate"
+    }
+  }
+}

@@ -16,7 +16,7 @@ ruby '2.5.1'
 # gem "sprockets-rails"
 
 RAILS_VERSION = '~> 5.2.0'.freeze
-%w[activerecord activemodel actionpack actionview activesupport railties].each { |name| gem name, RAILS_VERSION }
+%w[actioncable activerecord activemodel actionpack actionview activesupport railties activejob].each { |name| gem name, RAILS_VERSION }
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -25,7 +25,7 @@ gem 'puma', '~> 3.11'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "actioncable": "^5.2.0",
     "apollo-cache-inmemory": "^1.2.5",
     "apollo-client": "^2.3.5",
     "apollo-link": "^1.2.2",
@@ -12,6 +13,7 @@
     "caniuse-lite": "*",
     "css-loader": "^0.28.11",
     "graphql": "^0.13.2",
+    "graphql-ruby-client": "^1.4.0",
     "graphql-tag": "^2.9.2",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.3",
