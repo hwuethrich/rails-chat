@@ -38,7 +38,7 @@ class GraphqlChannel < ApplicationCable::Channel
     # on unsubscribe.
     @subscription_ids << context[:subscription_id] if result.context[:subscription_id]
 
-    sleep 1
+    # sleep 1
     transmit(payload)
   end
 
