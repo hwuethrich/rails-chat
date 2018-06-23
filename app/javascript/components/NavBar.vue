@@ -8,7 +8,7 @@
         <fa
           :icon="['fab', 'whatsapp']"
           size="lg" />
-        Whazz App
+        WhazzApp
       </b-navbar-brand>
 
       <b-nav-text v-if="loading">
