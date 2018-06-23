@@ -1,5 +1,5 @@
 <template>
-  <b-card class="mb-4 border-0">
+  <b-card class="mb-4 border-0 shadow-sm">
     <div class="d-flex justify-content-between">
       <small class="text-muted">
         P. Muster

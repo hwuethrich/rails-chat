@@ -1,7 +1,8 @@
 <template>
   <b-navbar
     type="dark"
-    variant="success">
+    variant="success"
+    class="shadow-sm">
     <b-container>
       <b-navbar-brand>
         <fa
@@ -34,3 +35,9 @@
     }
   }
 </script>
+
+<style lang="scss" scoped>
+.navbar {
+  z-index: 1;
+}
+</style>
