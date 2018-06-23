@@ -58,5 +58,6 @@
 .scroll-container {
   flex: 1;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 </style>
