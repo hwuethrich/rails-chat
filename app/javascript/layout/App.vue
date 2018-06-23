@@ -1,26 +1,31 @@
-<template lang="pug">
-  #app
-    b-container
-      h1 Hello World
-      chat
+<template>
+  <div
+    id="app"
+    class="d-flex flex-column">
+    <nav-bar />
+    <div class="content">
+      <router-view />
+    </div>
+  </div>
 </template>
 
 <script>
-  // import Sidebar from '../layout/Sidebar'
-  // import Toolbar from '../layout/Toolbar'
-  import Chat from '../components/Chat.vue'
+  import NavBar from 'components/NavBar.vue'
 
   export default {
-    components: {
-      // Sidebar,
-      // Toolbar,
-      Chat
-    }
+    components: { NavBar }
   }
 </script>
 
+
 <style lang="scss">
-body {
-  padding-top: 3em;
+#app {
+  height: 100vh;
+
+  .content {
+    flex: 1;
+    overflow: auto;
+  }
 }
 </style>
+

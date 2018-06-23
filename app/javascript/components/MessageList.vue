@@ -1,7 +1,6 @@
 <template lang="pug">
-  b-list-group
+  .message-list
     message-item(v-for='msg in messages' :key='msg.id', :message='msg')
-    // b-list-group-item(v-if="loading" variant="light") Loading ...
 </template>
 
 <script>
@@ -34,6 +33,10 @@
     apollo: {
       messages: {
         query: MESSAGES_QUERY
+        // update(data) {
+        //   console.log(data)
+        //   return data
+        // }
         // subscribeToMore: [
         //   {
         //     document: NEW_MESSAGE_SUBSCRIPTION,

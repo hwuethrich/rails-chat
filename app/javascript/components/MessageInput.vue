@@ -1,11 +1,6 @@
 <template lang="pug">
-  b-form(@submit="sendMessage")
-    b-input-group
-      b-input(v-model="text" autocomplete="off" required)
-
-      b-input-group-append
-        b-btn(type="submit" variant="primary")
-          | Send
+  b-form(@submit.prevent="sendMessage" class="d-flex flex-row")
+    b-input(v-model="text" autocomplete="off" placeholder="Say something..." required)
 </template>
 
 <script>
@@ -21,9 +16,7 @@
     },
 
     methods: {
-      sendMessage(evt) {
-        evt.preventDefault()
-
+      sendMessage() {
         const { text } = this.$data
 
         this.$apollo.mutate({
@@ -33,6 +26,7 @@
           }
         })
 
+        this.$emit('sent')
         this.text = ''
       }
     }
