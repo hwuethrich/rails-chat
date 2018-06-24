@@ -8,7 +8,7 @@
         <fa :icon="clockIcon" />
         <time-ago
           :value="message.createdAt"
-          :interval="60"
+          :interval="10"
         />
       </small>
     </div>
