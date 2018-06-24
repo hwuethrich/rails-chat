@@ -29,7 +29,9 @@
     methods: {
       update() {
         const time = moment(this.value)
-        if (time.diff(moment.now(), 'seconds') < 5) {
+        const age = moment().diff(time, 'seconds')
+
+        if (age < 5) {
           this.timeFromNow = 'Just now'
         } else {
           this.timeFromNow = time.fromNow()
