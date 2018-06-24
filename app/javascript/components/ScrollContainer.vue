@@ -26,8 +26,8 @@
         subtree: true
       }
 
-      const head = document.querySelector('head')
-      this.observer.observe(head, options)
+      // const head = document.querySelector('head')
+      // this.observer.observe(head, options)
       this.observer.observe(this.$el, options)
     },
 
@@ -36,11 +36,11 @@
     },
 
     methods: {
-      onResize() {
-        this.onContentChange()
+      onContentChange() {
+        this.onResize()
       },
 
-      onContentChange() {
+      onResize() {
         if (this.bottom === 0) {
           this.scrollToBottom()
         }
