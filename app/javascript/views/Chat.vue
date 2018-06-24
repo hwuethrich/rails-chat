@@ -44,6 +44,7 @@
 <style lang="scss">
 .chat-footer {
   background-color: #ced4da;
+  z-index: 1000;
 }
 </style>
 
