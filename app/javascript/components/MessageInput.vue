@@ -1,7 +1,24 @@
-<template lang="pug">
-  b-form(@submit.prevent="sendMessage" class="d-flex flex-row")
-    b-input(v-model="text" autocomplete="off" placeholder="Say something..." required)
+<template>
+  <b-form
+    class="d-flex flex-row"
+    @submit.prevent="sendMessage">
+    <b-input
+      ref="input"
+      v-model="newMessage"
+      autocomplete="off"
+      placeholder="Say something..."
+      required/>
+    <b-btn
+      :disabled="!canSend"
+      variant="link"
+      @click="sendMessage">
+      <fa
+        icon="paper-plane"
+        size="lg"/>
+    </b-btn>
+  </b-form>
 </template>
+
 
 <script>
   import { SEND_MESSAGE_MUTATION } from '../graphql/queries'
@@ -11,23 +28,27 @@
 
     data() {
       return {
-        text: ''
+        newMessage: ''
+      }
+    },
+
+    computed: {
+      canSend() {
+        return this.newMessage != ''
       }
     },
 
     methods: {
       sendMessage() {
-        const { text } = this.$data
-
         this.$apollo.mutate({
           mutation: SEND_MESSAGE_MUTATION,
           variables: {
-            text
+            text: this.newMessage
           }
         })
 
-        this.$emit('sent')
-        this.text = ''
+        this.newMessage = ''
+        this.$refs.input.$el.focus()
       }
     }
   }

@@ -18,51 +18,36 @@
       }
     },
 
-    mounted() {
-      this.$apollo
-        .subscribe({ query: NEW_MESSAGE_SUBSCRIPTION })
-        .subscribe(this.refresh)
-    },
+    // mounted() {
+    //   this.$apollo
+    //     .subscribe({ query: NEW_MESSAGE_SUBSCRIPTION })
+    //     .subscribe(this.refetch)
+    // },
 
     methods: {
-      refresh() {
+      refetch() {
+        console.log('refetch')
         this.$apollo.queries.messages.refetch()
       }
     },
 
     apollo: {
       messages: {
-        query: MESSAGES_QUERY
-        // update(data) {
-        //   console.log(data)
-        //   return data
-        // }
-        // subscribeToMore: [
-        //   {
-        //     document: NEW_MESSAGE_SUBSCRIPTION,
-        //     updateQuery: (previous, { subscriptionData }) => {
-        //       let xxx = this
-        //       this.apollo.queries.messages.refetch()
-        //       return previous
-
-        //       //console.log(previous, subscriptionData)
-
-        //       // const mergedMessages = [
-        //       //   subscriptionData.data.newMessage,
-        //       //   ...previous.messages
-        //       // ]
-
-        //       // const result = {
-        //       //   ...previous,
-        //       //   messages: mergedMessages
-        //       // }
-
-        //       // console.log(result)
-
-        //       // return result
-        //     }
-        // }
-        // ]
+        query: MESSAGES_QUERY,
+        subscribeToMore: [
+          {
+            document: NEW_MESSAGE_SUBSCRIPTION,
+            // Mutate the previous result
+            updateQuery: (previousResult, { subscriptionData }) => {
+              return {
+                messages: [
+                  ...previousResult.messages,
+                  subscriptionData.data.newMessage
+                ]
+              }
+            }
+          }
+        ]
       }
     }
   }

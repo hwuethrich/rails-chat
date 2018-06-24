@@ -3,6 +3,7 @@
     class="scroll-container"
     @scroll="onScroll">
     <slot />
+    <resize-observer @notify="onResize" />
   </div>
 </template>
 
@@ -15,17 +16,19 @@
       }
     },
 
-    computed: {},
-
     mounted() {
-      this.observer = new MutationObserver(this.onSlotChange)
+      this.observer = new MutationObserver(this.onContentChange)
 
-      this.observer.observe(this.$el, {
+      const options = {
         attributes: true,
         childList: true,
         characterData: true,
         subtree: true
-      })
+      }
+
+      const head = document.querySelector('head')
+      this.observer.observe(head, options)
+      this.observer.observe(this.$el, options)
     },
 
     beforeDestroy() {
@@ -33,7 +36,11 @@
     },
 
     methods: {
-      onSlotChange() {
+      onResize() {
+        this.onContentChange()
+      },
+
+      onContentChange() {
         if (this.bottom === 0) {
           this.scrollToBottom()
         }

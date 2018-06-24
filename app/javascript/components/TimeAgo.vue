@@ -28,7 +28,12 @@
 
     methods: {
       update() {
-        this.timeFromNow = moment(this.value).fromNow()
+        const time = moment(this.value)
+        if (time.diff(moment.now(), 'seconds') < 5) {
+          this.timeFromNow = 'Just now'
+        } else {
+          this.timeFromNow = time.fromNow()
+        }
       }
     }
   }

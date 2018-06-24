@@ -8,7 +8,7 @@
 // layout file, like app/views/layouts/application.html.erb
 
 // Vue Setup
-import Vue from 'vue/dist/vue.esm'
+import Vue from 'vue'
 import App from '../layout/App.vue'
 
 // Styles
@@ -18,9 +18,13 @@ import '../initializers/bootstrap'
 import '../initializers/fontawesome'
 import { apolloProvider } from '../initializers/apollo'
 import { router } from '../initializers/router'
+import '../initializers/vue-resize'
 
 // Filters
 import '../filters/datetime'
+
+// Disable production tip on console
+Vue.config.productionTip = false
 
 document.addEventListener('DOMContentLoaded', () => {
   new Vue({

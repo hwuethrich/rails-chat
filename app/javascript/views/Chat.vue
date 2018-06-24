@@ -1,6 +1,10 @@
 <template>
-  <div id="chat-view" class="bg-light h-100 d-flex flex-column">
-    <scroll-container class="chat-history pt-4" ref="history">
+  <div
+    id="chat-view"
+    class="bg-light h-100 d-flex flex-column">
+    <scroll-container
+      ref="history"
+      class="chat-history pt-4">
       <b-container>
         <message-list />
       </b-container>
@@ -22,10 +26,6 @@
 
   export default {
     name: 'Chat',
-
-    mounted() {
-      this.scrollToBottom()
-    },
 
     components: {
       MessageList,
