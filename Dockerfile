@@ -63,4 +63,4 @@ ENV PORT=3000
 
 EXPOSE 3000
 
-CMD ["./bin/rails", "server"]
+CMD ["./bin/rails", "server", "--early-hints"]
