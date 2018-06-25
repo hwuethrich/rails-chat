@@ -9,4 +9,9 @@ class ApplicationController < ActionController::Base
 
     redirect_to :root
   end
+
+  def logout
+    logout!
+    redirect_to :root
+  end
 end

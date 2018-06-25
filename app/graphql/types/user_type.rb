@@ -4,4 +4,5 @@ class Types::UserType < Types::BaseObject
   field :id, ID, null: false, description: 'Unique identifier'
   field :name, String, null: false, description: 'The name of the user'
   field :created_at, Types::DateTime, null: false, description: 'When the user was created'
+  field :messages, [Types::MessageType], null: false, description: 'The users messages'
 end

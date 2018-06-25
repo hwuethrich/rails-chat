@@ -14,6 +14,10 @@ module Authentication
     end
   end
 
+  def logout!
+    session.delete(:current_user)
+  end
+
   def system_user
     @system_user ||= User.system_user
   end

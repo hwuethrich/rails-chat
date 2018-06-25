@@ -6,16 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-unless User.any?
-  5.times do
-    User.create name: Faker::FunnyName.name
-  end
-end
-
-unless Message.any?
-  users = User.all
-
-  10.times do
-    Message.create text: Faker::Lorem.sentence, user: users.sample
-  end
-end
+User.system_user.say 'Welcome to the chat! 😎'
