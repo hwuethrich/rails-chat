@@ -6,10 +6,9 @@ class Mutations::SendMessage < Mutations::BaseMutation
   field :message, Types::MessageType, null: true
   field :errors, [String], null: false
 
-  def resolve(attrs)
-    message = current_user.messages.build(attrs)
-    if message.save
-      RailsChatSchema.subscriptions.trigger('newMessage', {}, message)
+  def resolve(text:)
+    message = current_user.say(text)
+    if message.persisted?
       { message: message, errors: [] }
     else
       { message: nil, errors: message.errors.full_messages }

@@ -8,6 +8,7 @@ export const MESSAGES_QUERY = gql`
       createdAt
       user {
         name
+        system
       }
     }
   }
@@ -21,6 +22,7 @@ export const SEND_MESSAGE_MUTATION = gql`
         createdAt
         user {
           name
+          system
         }
       }
     }
@@ -34,6 +36,7 @@ export const NEW_MESSAGE_SUBSCRIPTION = gql`
       createdAt
       user {
         name
+        system
       }
     }
   }

@@ -8,6 +8,9 @@ module Authentication
       else
         User.create(name: Faker::FunnyName.name).tap do |user|
           logger.info('NEW USER CREATED: %s' % user)
+
+          system_user.say '%s logged in' % user
+
           session[:current_user] = user.name
         end
       end
