@@ -6,6 +6,9 @@ export const MESSAGES_QUERY = gql`
       id
       text
       createdAt
+      user {
+        name
+      }
     }
   }
 `
@@ -16,6 +19,9 @@ export const SEND_MESSAGE_MUTATION = gql`
         id
         text
         createdAt
+        user {
+          name
+        }
       }
     }
   }
@@ -26,6 +32,9 @@ export const NEW_MESSAGE_SUBSCRIPTION = gql`
       id
       text
       createdAt
+      user {
+        name
+      }
     }
   }
 `

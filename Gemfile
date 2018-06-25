@@ -38,7 +38,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # GraphQL
 gem 'redis'
 gem 'graphql'
+gem 'graphql-rails_logger'
 gem 'graphiql-rails'
+
+# Random names
+gem 'faker'
 
 group :development, :test do
   # Debugging
@@ -64,7 +68,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

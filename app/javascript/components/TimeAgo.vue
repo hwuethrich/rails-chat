@@ -32,7 +32,7 @@
         const age = moment().diff(time, 'seconds')
 
         if (age < 5) {
-          this.timeFromNow = 'Just now'
+          this.timeFromNow = 'just now'
         } else {
           this.timeFromNow = time.fromNow()
         }

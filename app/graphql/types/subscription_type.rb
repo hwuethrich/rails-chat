@@ -4,6 +4,6 @@ class Types::SubscriptionType < GraphQL::Schema::Object
         description: 'A new message as been sent'
 
   def new_message
-    puts 'NEW MESSAGE'
+    # allow subscription
   end
 end

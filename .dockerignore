@@ -8,3 +8,4 @@ public/packs
 Dockerfile
 vendor/bundle
 .bundle/config
+yarn-error.log

@@ -7,10 +7,8 @@ class Mutations::SendMessage < Mutations::BaseMutation
   field :errors, [String], null: false
 
   def resolve(attrs)
-    message = Message.new(attrs)
-
+    message = current_user.messages.build(attrs)
     if message.save
-      puts 'ATTRS', message.attributes
       RailsChatSchema.subscriptions.trigger('newMessage', {}, message)
       { message: message, errors: [] }
     else

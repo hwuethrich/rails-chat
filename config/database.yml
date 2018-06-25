@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  database: rails_chat_production
+  # url: <%= ENV['DATABASE_URL'] %>
   # username: rails_chat
   # password: <%= ENV['RAILS_CHAT_DATABASE_PASSWORD'] %>

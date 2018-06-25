@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   post '/graphql', to: 'graphql#execute'
 
+  get '/reset', to: 'application#reset'
   root to: 'application#index'
   match '*path', to: 'application#index', format: false, via: :get
 end

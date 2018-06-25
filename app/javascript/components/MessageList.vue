@@ -18,12 +18,6 @@
       }
     },
 
-    // mounted() {
-    //   this.$apollo
-    //     .subscribe({ query: NEW_MESSAGE_SUBSCRIPTION })
-    //     .subscribe(this.refetch)
-    // },
-
     methods: {
       refetch() {
         console.log('refetch')

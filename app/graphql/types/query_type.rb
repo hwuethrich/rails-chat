@@ -4,7 +4,7 @@ class Types::QueryType < Types::BaseObject
 
   field :messages, [Types::MessageType],
         null: false,
-        description: 'Returns a list of messages'
+        description: 'Returns the last 10 messages'
 
   def messages
     result = Message.order(created_at: :desc).limit(10)
