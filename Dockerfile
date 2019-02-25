@@ -1,7 +1,7 @@
 ##########################################################################
 #### BUILD CONTAINER
 ##########################################################################
-FROM ruby:2.6-alpine AS builder
+FROM ruby:2.6.1-alpine AS builder
 
 # Install dependencies to build gems
 RUN apk --no-cache add \
@@ -39,7 +39,7 @@ RUN bundle exec rake assets:precompile
 ##########################################################################
 #### RUNTIME CONTAINER
 ##########################################################################
-FROM ruby:2.6-alpine
+FROM ruby:2.6.1-alpine
 
 # Install dependencies to build gems
 RUN apk --no-cache add \
